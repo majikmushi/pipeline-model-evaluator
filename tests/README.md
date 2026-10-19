@@ -1,6 +1,9 @@
-# Contract tests
+# Intake tests
 
-No behavioral tests exist yet because domain contracts have not been approved.
-Add accepted/rejected model fixtures in phase 1, graph-check cases in phase 2,
-and report serialization/invocation cases in phase 3. A pytest exit code of 5
-currently means no tests were collected; do not report it as a passing suite.
+Run `uv run pytest` from the repository root. Phase-1 coverage includes Markdown
+headings/frontmatter, explicit YAML blocks, locations, aliases/references,
+malformed input, duplicate IDs, cross-file resolution, unsafe tags, read failures
+and deterministic ordering. `fixtures/minimal.md` is the initial input contract.
+
+Canonical model validation, graph behavior, target feasibility and result classes
+remain phase-2/3 work. These tests do not claim those behaviors exist.

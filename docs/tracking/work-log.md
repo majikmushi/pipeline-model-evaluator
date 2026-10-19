@@ -31,3 +31,21 @@ Reconciliation checks passed: 16 unique work items, valid requirement/decision/
 dependency references, acyclic dependencies, all 24 relative links, and corrected
 source-recovery/deferred-reporting statuses. Runtime checks were not rerun for
 these documentation-only changes.
+
+## 2026-10-20: initial phase-1 implementation
+
+Verified PR #1 merged; branched feature/specification-intake from current main.
+Implemented P1-02/P1-03 against the explicit intake-format proposal. P1-01 remains
+in progress for the wider domain/feasibility fixture. Added markdown-it-py and
+PyYAML with generated lock updates, retained source/index/definition records,
+frontmatter/envelope checks and source-linked duplicate/missing/ambiguous/kind
+reference diagnostics. No graph, inference, CLI or processor execution added.
+
+27 tests pass on Python 3.12.14. Wheel and source distribution build pass. Exact
+syntax decisions are documented for PR review, not silently treated as recovered
+or owner-approved contracts. Schema diagnostics locate blocks; YAML errors locate
+physical error lines. Extra domain fields are preserved but not validated deeply.
+
+Final checks: all 27 tests also pass on Python 3.14.8; locked sync and whitespace
+checks pass. Planning validation passed for 16 work items, all references, acyclic
+dependencies and 28 documentation links.

@@ -67,3 +67,9 @@ Read only selected source files; do not execute model code or fetch remote refs.
 Specify a constraint adapter interface returning findings and unsupported cases;
 phase 1–3 does not implement a solver. Exact schema, tagged-block marker,
 alias rules, canonical identity and output encoding remain open decisions.
+
+## Implemented phase-1 boundary
+
+The concrete `inspect_sources` facade and retained intake records are specified
+in [intake format](intake-format.md). The signatures above remain intended
+phase boundaries, not a claim that every stage is a separate public function.

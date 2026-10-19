@@ -2,34 +2,25 @@
 
 Updated 2026-10-20 (Australia/Perth).
 Repository: https://github.com/majikmushi/pipeline-model-evaluator
-Branch: prep/python-evaluator-design
-Draft PR: https://github.com/majikmushi/pipeline-model-evaluator/pull/1
+Branch: feature/specification-intake
 
-## Current state
+Preparation PR #1 was verified merged. This branch adds the initial phase-1
+intake library: explicit local Markdown, frontmatter, tagged YAML definitions,
+heading/block line evidence, typed ID/alias reference resolution and diagnostics.
+Documents, indexes, blocks and definition/reference records are retained on
+partial failures. See ../design/intake-format.md for the concrete proposed format.
 
-Scaffold, requirements and tracking are prepared on the PR branch. The earlier
-plan was recovered from the end of the attached export. The corrected scope is
-phase 1 intake/structural validation, phase 2 canonical model/graph, phase 3
-capability composition/dependencies. See ../planning/source-reconciliation.md.
+P1-02/P1-03 are prepared and tested for this intake scope. P1-01 remains in progress:
+canonical contracts, representative inventory/target and expected feasibility
+outcomes still need design work. The exact intake syntax is a PR proposal;
+merely coding it does not imply owner adoption of every contract.
 
-Source still contains only a package docstring. No evaluator or behavioral tests
-exist. Main/settings unchanged; no issue board, automation or delegated agent.
+Verification: 27 tests pass on Python 3.12.14; wheel/source distribution build
+passes. Other final checks are recorded in work-log.md. Phase-2 canonical graphs
+and phase-3 composition are not implemented; intake valid does not mean feasible.
 
-## Resume here
-
-../README.md -> ../planning/source-reconciliation.md ->
-../requirements/requirements.md -> ../planning/decisions.md -> work-items.json.
-
-Next: P1-01 is planned, not blocked on recovering the whole prior chat. Specify
-a representative tagged Markdown fixture, inventory, target and expected
-classifications, then settle DEC-002/003. Source-derived requirements can guide
-this work now; exact syntax and compatibility details still need review.
-
-## Evidence
-
-Initial sync/import/build passed on 3.14.8; zero tests collected.
-Documentation/register checks are recorded in work-log.md. No feature completion,
-independent review, merge or Python 3.12 compatibility claim is made.
-
-Next responsibility: domain/design work for bounded fixtures and contracts;
-then implementation of ready work items only after feature work is authorized.
+Resume: ../README.md -> ../design/intake-format.md -> ../planning/decisions.md
+-> work-items.json. Next bounded work is completing P1-01 and reviewing the
+canonical model contracts for P2-03. Do not run real processors or add solvers.
+No external issues, automation, independent reviewer or merge is claimed for this
+implementation branch. Main/settings were not changed by this work.
