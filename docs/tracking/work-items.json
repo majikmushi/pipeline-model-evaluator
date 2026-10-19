@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "updated": "2026-10-20",
+  "status_scope": "Work prepared on draft PR; not merge or design adoption status",
+  "items": [
+    {
+      "id": "PREP-01",
+      "title": "Prepare Python scaffold",
+      "status": "done",
+      "depends_on": [],
+      "blocked_by": [],
+      "requirements": [
+        "PRE-001",
+        "PRE-002",
+        "PRE-004"
+      ],
+      "responsible_role": "preparer",
+      "evidence": "Draft PR #1; initial install/import/build evidence in work-log.md"
+    },
+    {
+      "id": "PLAN-01",
+      "title": "Prepare requirements and planning records",
+      "status": "done",
+      "depends_on": [
+        "PREP-01"
+      ],
+      "blocked_by": [],
+      "requirements": [
+        "PRE-003"
+      ],
+      "responsible_role": "preparer",
+      "evidence": "Draft PR #1; planning validation recorded in work-log.md"
+    },
+    {
+      "id": "P1-01",
+      "title": "Agree source model and domain contract",
+      "status": "blocked",
+      "depends_on": [
+        "PLAN-01"
+      ],
+      "blocked_by": [
+        "DEC-001",
+        "DEC-002",
+        "DEC-003"
+      ],
+      "requirements": [
+        "MOD-003"
+      ],
+      "responsible_role": "owner/domain analyst",
+      "evidence": null
+    },
+    {
+      "id": "P1-02",
+      "title": "Implement schema and parser",
+      "status": "planned",
+      "depends_on": [
+        "P1-01"
+      ],
+      "blocked_by": [
+        "DEC-001",
+        "DEC-002"
+      ],
+      "requirements": [
+        "MOD-001",
+        "SEC-001"
+      ],
+      "responsible_role": "implementer",
+      "evidence": null
+    },
+    {
+      "id": "P1-03",
+      "title": "Implement cross-record validation",
+      "status": "planned",
+      "depends_on": [
+        "P1-02"
+      ],
+      "blocked_by": [
+        "DEC-003"
+      ],
+      "requirements": [
+        "MOD-002"
+      ],
+      "responsible_role": "implementer",
+      "evidence": null
+    },
+    {
+      "id": "P2-01",
+      "title": "Implement internal graph adapter",
+      "status": "planned",
+      "depends_on": [
+        "P1-03"
+      ],
+      "blocked_by": [
+        "DEC-003"
+      ],
+      "requirements": [
+        "EVA-002",
+        "QUA-001"
+      ],
+      "responsible_role": "implementer",
+      "evidence": null
+    },
+    {
+      "id": "P2-02",
+      "title": "Implement approved structural rules",
+      "status": "planned",
+      "depends_on": [
+        "P2-01"
+      ],
+      "blocked_by": [
+        "DEC-004"
+      ],
+      "requirements": [
+        "EVA-001",
+        "EVA-003"
+      ],
+      "responsible_role": "implementer",
+      "evidence": null
+    },
+    {
+      "id": "P3-01",
+      "title": "Implement versioned report serialization",
+      "status": "planned",
+      "depends_on": [
+        "P2-02"
+      ],
+      "blocked_by": [
+        "DEC-004"
+      ],
+      "requirements": [
+        "REP-001"
+      ],
+      "responsible_role": "implementer",
+      "evidence": null
+    },
+    {
+      "id": "P3-02",
+      "title": "Implement agreed invocation boundary",
+      "status": "planned",
+      "depends_on": [
+        "P3-01"
+      ],
+      "blocked_by": [
+        "DEC-005"
+      ],
+      "requirements": [
+        "REP-002"
+      ],
+      "responsible_role": "implementer",
+      "evidence": null
+    },
+    {
+      "id": "QA-01",
+      "title": "Verify adopted requirements and compatibility",
+      "status": "planned",
+      "depends_on": [
+        "P3-02"
+      ],
+      "blocked_by": [
+        "DEC-006"
+      ],
+      "requirements": [
+        "QUA-002"
+      ],
+      "responsible_role": "verifier",
+      "evidence": null
+    }
+  ]
+}

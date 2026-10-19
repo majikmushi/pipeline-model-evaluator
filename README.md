@@ -29,3 +29,9 @@ Commit changes to dependency declarations together with a regenerated uv.lock.
 The earlier ChatGPT planning answers could not be recovered from their content
 references. These documents are proposals, not a claim to reproduce that plan.
 Confirm the model semantics and phase boundaries before feature implementation.
+
+## Planning and continuation
+
+Start with the [project documentation index](docs/README.md) and
+[continuation checkpoint](docs/tracking/checkpoint.md). Requirements, work items,
+decisions, risks, implementation details and verification are tracked there.
