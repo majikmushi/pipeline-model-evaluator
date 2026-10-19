@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated": "2026-10-20",
-  "status_scope": "Work prepared on draft PR; not merge or design adoption status",
+  "status_scope": "Implementation prepared for PR review; not merge or owner adoption status. P1-02/P1-03 use the explicit intake proposal while broader P1-01 remains in progress.",
   "items": [
     {
       "id": "PREP-01",
@@ -34,7 +34,7 @@
     {
       "id": "P1-01",
       "title": "Specify representative source fixtures and exact contracts",
-      "status": "planned",
+      "status": "in_progress",
       "depends_on": [
         "RECON-01"
       ],
@@ -43,42 +43,38 @@
         "MOD-003"
       ],
       "responsible_role": "owner/domain analyst",
-      "evidence": null
+      "evidence": "Initial intake syntax and source fixture are proposed in docs/design/intake-format.md and tests/fixtures/minimal.md; inventory/target/feasibility cases and semantic decisions remain open."
     },
     {
       "id": "P1-02",
       "title": "Implement Markdown intake, index and retained stages",
-      "status": "planned",
+      "status": "done",
       "depends_on": [
         "P1-01"
       ],
-      "blocked_by": [
-        "DEC-002"
-      ],
+      "blocked_by": [],
       "requirements": [
         "SRC-001",
         "SRC-003",
         "SEC-001"
       ],
       "responsible_role": "implementer",
-      "evidence": null
+      "evidence": "Implemented for the documented phase-1 intake proposal; 27 tests pass on Python 3.12.14, package build passes. Broader canonical/feasibility contracts are not claimed complete."
     },
     {
       "id": "P1-03",
       "title": "Implement tagged extraction and reference resolution",
-      "status": "planned",
+      "status": "done",
       "depends_on": [
         "P1-02"
       ],
-      "blocked_by": [
-        "DEC-002"
-      ],
+      "blocked_by": [],
       "requirements": [
         "SRC-002",
         "MOD-002"
       ],
       "responsible_role": "implementer",
-      "evidence": null
+      "evidence": "Implemented for the documented phase-1 intake proposal; 27 tests pass on Python 3.12.14, package build passes. Broader canonical/feasibility contracts are not claimed complete."
     },
     {
       "id": "P2-01",

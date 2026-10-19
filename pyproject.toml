@@ -3,7 +3,12 @@ name = "pipeline-model-evaluator"
 version = "0.0.0"
 description = "Design-stage static pipeline model evaluator"
 requires-python = ">=3.12"
-dependencies = ["pydantic>=2,<3", "networkx>=3,<4"]
+dependencies = [
+    "pydantic>=2,<3",
+    "networkx>=3,<4",
+    "markdown-it-py>=3,<5",
+    "pyyaml>=6,<7",
+]
 
 [dependency-groups]
 dev = ["pytest>=8,<10"]

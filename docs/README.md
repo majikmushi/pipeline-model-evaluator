@@ -18,3 +18,5 @@ A completed document does not mean its proposed product behavior is approved.
 
 The earlier plan is now recovered. Read [source reconciliation](planning/source-reconciliation.md)
 for corrected phase boundaries and the remaining concrete design decisions.
+
+Implemented phase 1: [intake format and API](design/intake-format.md).
