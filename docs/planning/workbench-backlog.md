@@ -20,6 +20,9 @@ WB-DES-02 has [proposed expected scenarios](../design/evaluation-scenarios.md)
 for abstract feasibility, provider availability, alternatives, uncertainty,
 contradiction, bootstrap and rerun provenance. Exact executable oracles depend
 on the open result, inventory and revision decisions.
+WB-DES-03 has a [module concern proposal](../design/module-boundaries.md)
+covering purpose, owned state, interfaces, errors, exclusions, verification and
+diagnostic/evidence correlation. Adoption of public contracts remains open.
 
 DEC-008 records adoption questions. Design work may proceed to make them concrete;
 runtime implementation of these additions requires resolution of the affected

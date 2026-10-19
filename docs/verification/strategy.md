@@ -1,9 +1,10 @@
 # Verification strategy
 
-Initial scaffold: Python 3.14.8 locked sync, imports and wheel/source build passed.
-Pytest collected zero tests (exit 5), not a passing behavioral suite.
-Python 3.12 minimum remains unverified. Planning changes require reference/link
-and register validation, not repeated runtime checks for unchanged source.
+Current phase-1 evidence: 27 intake tests passed on Python 3.12.14 and 3.14.8;
+locked sync and wheel/source build passed. The initial scaffold's zero-test
+collection was superseded by that intake suite. Planning changes require
+reference/link and register validation, not repeated runtime checks for
+unchanged source.
 
 ## First-version acceptance cases
 
@@ -40,6 +41,10 @@ The [WB-DES-02 scenario matrix](../design/evaluation-scenarios.md) proposes
 specific inputs, conclusions and provenance assertions. It is design evidence,
 not an executed test suite; turn it into runtime fixtures after DEC-002/003/004/008
 and the inventory completeness contract are selected.
+The [WB-DES-03 concern contracts](../design/module-boundaries.md) assign a
+verification obligation to each current or proposed stage. Intake checks are
+executable now; canonical, graph, evaluation and result obligations remain
+planned until those modules and their public contracts exist.
 
 For this documentation change: validate work/requirement/decision references,
 acyclic dependencies, local links and source section/version/hash metadata.

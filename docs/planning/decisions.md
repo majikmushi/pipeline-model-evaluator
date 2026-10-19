@@ -59,3 +59,8 @@ The WB-DES-02 [acceptance scenarios](../design/evaluation-scenarios.md) make
 DEC-004/008 reviewable without selecting a result encoding. Inventory
 completeness, unsupported-constraint classification and rule disabling remain
 open details; executable fixtures must follow the adopted choices.
+
+The WB-DES-03 [module concern proposal](../design/module-boundaries.md) assigns
+data and error ownership across intake, canonicalization, validation, graphs,
+evaluation and result assembly. It does not resolve public API shapes or the
+remaining DEC-002/003/004/008 choices.

@@ -1,12 +1,15 @@
 # Implementation details
 
-The recovered design organizes code into packages. These are future boundaries,
-not empty stubs to create now. Source currently contains only __init__.py.
+The recovered design organizes work into concerns. Phase-1 source intake now
+exists in `sources/intake.py` and `sources/records.py`; the other entries below
+are proposed boundaries, not empty stubs to create now. See the
+[module concern proposal](module-boundaries.md) for ownership and dependency
+direction.
 
 | Package | Responsibilities |
 | --- | --- |
-| sources/loader.py, markdown.py, definition_extractor.py | Read selected Markdown, frontmatter, headings, tagged YAML and source spans |
-| resolution/identifiers.py, references.py | Stable IDs, aliases, duplicate/missing/ambiguous references |
+| sources/intake.py, records.py (implemented) | Read selected Markdown, frontmatter, headings, tagged YAML and source spans; resolve intake IDs/aliases and references |
+| Canonical resolution (proposed) | Resolve canonical identity, revisions and contextual bindings beyond intake aliases |
 | models/definitions.py, artifacts.py, capabilities.py, findings.py | Pydantic canonical records and evidence/results |
 | validation/schemas.py, contracts.py | Serialized structure, references and type/contract compatibility |
 | graphs/builder.py, queries.py | Internal typed NetworkX relationships |
@@ -50,9 +53,9 @@ report unsupported expressions. Add clingo/Z3 only in a later scoped change.
 
 ## Dependencies and verification
 
-Existing stack: uv, Pydantic, NetworkX, pytest. Markdown/frontmatter parsers are
-implementation candidates; select and lock them in P1-02 after extraction syntax
-is settled. Do not add solvers, RDF, planning frameworks or GUI dependencies now.
+Existing stack: uv, Pydantic, NetworkX, pytest, markdown-it-py and PyYAML.
+The Markdown/YAML parsers were selected for the phase-1 intake implementation.
+Do not add solvers, RDF, planning frameworks or GUI dependencies now.
 Verify source-span fidelity, malformed tagged data, ambiguous references,
 multi-input gating, alternative providers, bootstrap/no-bootstrap cycles,
 explicit inventory, missing definitions, result classes and repeatable evidence.
