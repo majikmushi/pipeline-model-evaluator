@@ -1,45 +1,38 @@
 # Project brief
 
-Updated: 2026-10-20 (Australia/Perth).
+Updated 2026-10-20 (Australia/Perth).
+Repository: https://github.com/majikmushi/pipeline-model-evaluator.
+Current scope: design-stage preparation and planning in draft PR #1.
 
-## Confirmed task context
+## Purpose
 
-Prepare https://github.com/majikmushi/pipeline-model-evaluator as a Python
-pipeline model evaluator with uv, Pydantic, NetworkX, and pytest. Cover phases
-1–3, interfaces, contracts, requirements, implementation planning, and tracking.
-Preserve existing content and use a branch/PR. Substantial feature implementation
-is outside the current authorization.
+Evaluate artifact-processing pipeline designs without executing their processors.
+Read the indexed Markdown/YAML specification, reconstruct its canonical model,
+validate it and determine whether requested outputs can be composed from explicitly
+available inputs and capabilities. Return evidence-backed feasibility and gaps.
 
-## Intended outcome
+The recovered plan is documented in [source reconciliation](source-reconciliation.md).
+Its final repository confirmation selects phases 1–3 with uv, Pydantic, NetworkX
+and pytest. Initial generic repository planning is superseded where it conflicts.
 
-Proposed: a static tool that accepts an explicit pipeline model, validates its
-shape and references, evaluates approved structural rules, and emits a repeatable
-report. Model authors and reviewers should be able to locate findings in input
-and understand which policy produced them.
+## Delivery boundary
 
-The exact source model, node/edge meanings, graph validity rules, and scoring
-meaning have not been recovered. These are open design questions, not implicit
-requirements. This project does not evaluate machine-learning predictions unless
-the owner later defines that as the intended domain.
+Phase 1: specification intake and structural validation.
+Phase 2: canonical model and graph construction.
+Phase 3: capability composition and dependency evaluation.
+Design selection profiles and an extensible constraint interface now.
+Later: solvers/optimization (phase 4), broad reporting/simulation/adapters (phase 5),
+LLM integration and operational processing.
 
-## Sources and limits
+## Confirmed preparation constraints
 
-- Current chat: repository selection, requested stack, design-only preparation,
-  and request for planning/tracking and implementation detail documentation.
-- Referenced chat: Organizational Concepts in Programming,
-  conversation ID 390fc28f-65c4-47c0-b943-87d0060c2c8c.
-  Its assistant planning answers were returned as unresolved content references.
-- Initial repository: main at 8f4f3923d4ff4c98dca2e8a1d64f1a6ce1171de7,
-  containing only README.md.
-- Initial preparation: commit d230af169888f481822da81cd17638e5ba8e88fe
-  in draft PR #1.
+Preserve existing content, use branch/PR workflow and do not implement substantial
+features during preparation. Add requirements, implementation details and durable
+tracking/continuation records. No schedule or individual assignment is implied.
 
-No missing chat answer is treated as recovered evidence. There is no configured
-external project definition or role policy in the inspected repository.
+## Remaining specificity
 
-## Scope
-
-Now: reviewable preparation and project records.
-Later, after design decisions: schema, structural analysis, reporting, and
-possibly a CLI. Deferred: pipeline execution, remote fetching, plugins, GUI,
-deployment, numeric scoring, and performance targets without representative data.
+The plan is recovered; the exact tagged YAML grammar, full serialized schema,
+representative acceptance model, alias behavior, compatibility rules and result
+encoding still need a reviewed design. These are bounded design tasks, not a
+request to reconstruct the entire earlier conversation again.

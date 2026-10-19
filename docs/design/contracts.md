@@ -1,41 +1,69 @@
-# Proposed interfaces and contracts
+# Model and interface contracts
 
-These are design signatures, not executable stubs or approved public APIs.
+Scope recovered from the earlier plan; exact wire schema remains a design task.
+[Source reconciliation](../planning/source-reconciliation.md).
+
+## Canonical records
+
+| Record | Required design content |
+| --- | --- |
+| Model | model ID/version, typed collections, source revision |
+| Processor | stable ID, consumes/produces artifact types, requires/provides capabilities, constraints, lifecycle state, determinism |
+| ArtifactType | stable ID, schema reference and compatibility information |
+| Capability | stable ID and declared meaning |
+| Dependency | typed endpoints and relationship meaning |
+| Constraint | stable ID, expression/rule reference; unsupported expressions remain unresolved |
+| Assumption | stable ID, status, explicit acceptance and evidence |
+| Evidence | source reference, stable definition ID, source location |
+| Finding | ID/code, severity, result classification, evidence and derivation |
+| SelectionProfile | target output, available inputs, acceptable uncertainty, target cost, allowed methods |
+
+Availability is an explicit inventory, not inferred from artifact declarations.
+Lifecycle evidence distinguishes conceptual, validated, simulated and
+operationally demonstrated claims. Inference cannot upgrade a declaration into
+operational proof. Stable IDs identify definitions; line spans aid navigation.
+
+## Pipeline boundaries (design signatures)
 
 ```python
-parse_model(document: Mapping[str, object]) -> PipelineModel
-validate_structure(model: PipelineModel) -> tuple[Diagnostic, ...]
-evaluate(model: PipelineModel, policy: EvaluationPolicy) -> EvaluationReport
-serialize_report(report: EvaluationReport) -> str
+load_sources(paths: Sequence[Path]) -> SourceBundle
+index_sources(sources: SourceBundle) -> StructuralIndex
+extract_definitions(sources: SourceBundle, index: StructuralIndex) -> DefinitionSet
+resolve_definitions(definitions: DefinitionSet) -> ResolutionResult
+build_model(resolved: ResolutionResult) -> ModelBuildResult
+validate_model(model: Model) -> tuple[Diagnostic, ...]
+build_graph(model: Model) -> EvaluationGraph
+evaluate(model: Model, profile: SelectionProfile, policy: EvaluationPolicy) -> EvaluationResult
+project_results(result: EvaluationResult) -> ResultArtifact
 ```
 
-## Boundaries
+These signatures supersede the generic mapping-only parser proposal. Define
+result/error containers and partial-data rules before coding. Retain intermediate
+representations; findings preserve provenance through transformations.
 
-- PipelineModel: versioned Pydantic schema with explicit node identifiers and
-  edge references. Required fields, extra-field policy, and graph restrictions
-  remain open decisions.
-- Diagnostic: stable code, severity, human-readable message, and location or
-  model reference. Define and test a stable sort key.
-- EvaluationPolicy: explicit enabled checks and approved severity/threshold
-  choices. Defaults must not imply an unapproved meaning of correctness.
-- EvaluationReport: schema version, model identity, policy identity, and ordered
-  findings. Define identity and provenance before serializing reports.
+## Evaluation contract
 
-Parsing rejects malformed documents with structured validation errors.
-Structural validation reports issues in otherwise schema-valid input.
-Specify which diagnostic severities prevent evaluation, and how evaluate uses
-validation, before implementation. Internal failures must remain distinguishable
-from model findings; never silently convert them into success.
+Forward inference adds outputs only after all required inputs and capabilities
+are satisfied under the explicit assumption policy. Backward reasoning retains
+alternative providers and full prerequisite sets. A simple graph path is
+insufficient proof of multi-input feasibility.
 
-Keep NetworkX graphs internal. Public models and reports must not expose mutable
-graph instances. Evaluation must not mutate caller-owned input.
-Serialization should produce stable JSON; decide numeric and timestamp handling.
-The evaluator must not execute input code or the pipeline it describes.
+Result classes: proven (within validated model and accepted assumptions),
+conditional (explicit unsatisfied assumptions/contracts), unresolved (insufficient
+knowledge). Contradictions/invalid compositions must be flagged separately.
+Operational correctness is outside design-time proof. Prevent circular
+self-justification; verify bootstrap availability and external enabling paths.
 
-## Decisions needed before implementation
+Order findings deterministically; record selected rules, inventory, target,
+model/policy identity, derivation and supporting definition locations.
+Severity and epistemic result class are separate fields. Do not infer a numeric
+score. Public domain records must not expose mutable NetworkX graph objects.
 
-1. Authoritative source model and representative examples.
-2. Input format, schema version policy, and unknown-field behavior.
-3. Edge semantics, disconnected components, and cycle validity.
-4. Rule catalogue, diagnostic severities, and stop/continue policy.
-5. Report identity, deterministic ordering, invocation, and exit-code contract.
+## Error and extension boundaries
+
+Separate malformed source/frontmatter, unresolved definitions, model findings,
+unsupported constraints and internal failures. Unknown is not false.
+Read only selected source files; do not execute model code or fetch remote refs.
+Specify a constraint adapter interface returning findings and unsupported cases;
+phase 1–3 does not implement a solver. Exact schema, tagged-block marker,
+alias rules, canonical identity and output encoding remain open decisions.

@@ -1,37 +1,35 @@
 # Continuation checkpoint
 
-Updated: 2026-10-20 (Australia/Perth).
+Updated 2026-10-20 (Australia/Perth).
 Repository: https://github.com/majikmushi/pipeline-model-evaluator
 Branch: prep/python-evaluator-design
 Draft PR: https://github.com/majikmushi/pipeline-model-evaluator/pull/1
 
 ## Current state
 
-Preparation scaffold and planning documentation are prepared on the PR branch.
-Source contains only a package docstring. No evaluator behavior is implemented.
-Main is unchanged. No external issue board or scheduled monitor is configured.
-Requirements for future behavior remain proposals.
+Scaffold, requirements and tracking are prepared on the PR branch. The earlier
+plan was recovered from the end of the attached export. The corrected scope is
+phase 1 intake/structural validation, phase 2 canonical model/graph, phase 3
+capability composition/dependencies. See ../planning/source-reconciliation.md.
 
-## Read next
+Source still contains only a package docstring. No evaluator or behavioral tests
+exist. Main/settings unchanged; no issue board, automation or delegated agent.
 
-../README.md -> ../planning/project-brief.md -> ../requirements/requirements.md
--> ../planning/decisions.md -> work-items.json.
+## Resume here
 
-## Immediate next action
+../README.md -> ../planning/source-reconciliation.md ->
+../requirements/requirements.md -> ../planning/decisions.md -> work-items.json.
 
-P1-01: obtain the authoritative earlier plan or a representative input model and
-expected report from the owner. Resolve DEC-001/002/003 in a reviewable design
-change before implementing schema or graph behavior. Existing planning updates
-do not require waiting for those answers.
+Next: P1-01 is planned, not blocked on recovering the whole prior chat. Specify
+a representative tagged Markdown fixture, inventory, target and expected
+classifications, then settle DEC-002/003. Source-derived requirements can guide
+this work now; exact syntax and compatibility details still need review.
 
-## Evidence and limitations
+## Evidence
 
-Initial install/import/build passed on Python 3.14.8; no tests collected.
-Planning validation results are in work-log.md. No independent review or merge
-is claimed. Detailed protection reads returned 403; keep using PR workflow.
+Initial sync/import/build passed on 3.14.8; zero tests collected.
+Documentation/register checks are recorded in work-log.md. No feature completion,
+independent review, merge or Python 3.12 compatibility claim is made.
 
-## Handoff
-
-Next responsibility: owner/domain analyst for examples and design adoption;
-then implementer for a bounded ready work item. No agent has been delegated
-or assigned by these documents. Refresh this checkpoint at the end of each run.
+Next responsibility: domain/design work for bounded fixtures and contracts;
+then implementation of ready work items only after feature work is authorized.

@@ -26,9 +26,10 @@ Commit changes to dependency declarations together with a regenerated uv.lock.
 - [Interfaces and contracts](docs/design/contracts.md)
 - [Repository preparation and decisions](docs/design/preparation.md)
 
-The earlier ChatGPT planning answers could not be recovered from their content
-references. These documents are proposals, not a claim to reproduce that plan.
-Confirm the model semantics and phase boundaries before feature implementation.
+The original plan has now been recovered from the attached conversation export.
+See [source reconciliation](docs/planning/source-reconciliation.md). Initial scope
+is specification intake, canonical model/graph construction, and capability
+composition/dependency evaluation. Exact schemas and examples remain design work.
 
 ## Planning and continuation
 

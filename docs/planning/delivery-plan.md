@@ -1,36 +1,36 @@
 # Delivery plan
 
-No delivery dates or individual assignees have been agreed. Roles below describe
-responsibilities, not an observed assignment. Status lives in the JSON register.
+Scope follows the recovered plan. Status is in ../tracking/work-items.json.
+Dates and individual assignees are not agreed.
 
-| Milestone | Work items | Dependencies | Exit gate |
+| Milestone | Work | Dependencies | Exit |
 | --- | --- | --- | --- |
-| M0 Preparation | PREP-01, PLAN-01 | None | Reviewable scaffold, planning records and honest check evidence |
-| M1 Model contract | P1-01, P1-02, P1-03 | M0; DEC-001/002/003 | Approved schema and fixtures, structured validation errors |
-| M2 Structural evaluation | P2-01, P2-02 | M1; DEC-003/004 | Approved rules, deterministic findings, nonmutation checks |
-| M3 Reporting/integration | P3-01, P3-02, QA-01 | M2; DEC-004/005 | Stable report, documented invocation if adopted, mapped checks |
+| M0 Preparation | PREP-01, PLAN-01, RECON-01 | None | Scaffold and source-aligned planning in PR |
+| M1 Intake/validation | P1-01, P1-02, P1-03 | M0; DEC-002/003 as applicable | Indexed/extracted spec with source diagnostics |
+| M2 Canonical model/graph | P2-03, P2-01, P2-02 | M1 | Typed model, validity checks and queryable graph |
+| M3 Composition/dependencies | P3-03, P3-04, P3-05, P3-06, QA-01 | M2; DEC-004 | Evidence-backed target feasibility and gap result |
+| Later | P3-01, P3-02 | Separately scoped | Phase-5 reporting/invocation integration |
 
-## Work breakdown
+## Bounded assignments
 
-- P1-01: owner supplies source model and expected results; analyst reconciles
-  recovered plan, proposes schema and records decisions. Do not invent semantics.
-- P1-02: implement schema/parser after approval; include invalid version, malformed
-  fields and hostile data cases. SEC-001 applies.
-- P1-03: implement cross-record validation; cover duplicate IDs, missing endpoints,
-  and approved empty/disconnected graph behavior.
-- P2-01: implement private graph conversion; verify graph fidelity and unchanged
-  caller input, including parallel edges if adopted.
-- P2-02: implement only approved rules and policy selection; verify positive,
-  negative, boundary, disabled-rule, and deterministic-order behavior.
-- P3-01: implement versioned report and serializer with canonical identity rules;
-  review golden fixtures and compatibility behavior.
-- P3-02: implement an invocation adapter only if adopted; document input/errors,
-  stdout/stderr and exit behavior. Otherwise document library invocation.
-- QA-01: reconcile all adopted requirement IDs to tests, execute supported Python
-  checks and package checks, and record actual evidence and remaining limits.
+P1-01: turn recovered concepts into a small representative tagged source fixture,
+inventory, target and expected outcomes; settle extraction/schema/graph decisions.
+P1-02: source loader, Markdown index, frontmatter, spans and retained stage outputs.
+P1-03: tagged-definition extraction and stable ID/alias/reference diagnostics.
+P2-03: canonical domain records, lifecycle evidence, assumptions, selection profile
+and extensible constraint contract. Unsupported constraints remain explicit.
+P2-01: typed internal graph with all inputs and alternative providers preserved.
+P2-02: structural/type checks, policy selection and deterministic finding order.
+P3-03: forward fixed-point inference with explicit inventory and AND input gating.
+P3-04: backward prerequisite analysis retaining OR provider alternatives.
+P3-05: unsupported cycles, bootstrap/external path checks and unreachable outputs.
+P3-06: combine analyses into basic feasibility/gap results with evidence,
+derivations, assumptions, result class and contradictions; no operational claims.
+QA-01: verify the first-version questions and every applicable requirement.
 
-## Completion rule
+P3-01 and P3-02 retain historical IDs but are deferred; they no longer define
+phase 3. Do not interpret old ID names as current phase membership.
 
-Each implementation item needs adopted requirements, reviewed decisions, linked
-change, executed checks, and a work-log entry before done. Review is performed
-through normal PR review; this chat does not constitute independent review.
+Done requires reviewed affected design, implementation where applicable,
+meaningful executed checks, evidence and updated checkpoint. Prepared documents
+do not complete feature work or imply PR merge.

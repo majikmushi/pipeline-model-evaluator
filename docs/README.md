@@ -15,3 +15,6 @@ Start here when continuing the project in a new chat.
 The JSON register is authoritative for work-item status. Requirements define
 acceptance; the delivery plan defines dependencies; decisions record adoption.
 A completed document does not mean its proposed product behavior is approved.
+
+The earlier plan is now recovered. Read [source reconciliation](planning/source-reconciliation.md)
+for corrected phase boundaries and the remaining concrete design decisions.

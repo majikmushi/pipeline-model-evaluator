@@ -1,34 +1,43 @@
-# Proposed phases 1–3
+# Implementation phases from the recovered plan
 
-Status: design proposal. Reconcile with the original plan before implementation.
+Source: [reconciliation](../planning/source-reconciliation.md).
+Current task remains preparation only; none of these feature phases is complete.
 
-## Phase 1: Model definition and validation
+## Phase 1: Specification intake and structural validation
 
-Agree what a pipeline model describes, its schema version, node and edge fields,
-identifier constraints, reference resolution, and allowed graph shapes.
-Use Pydantic for boundary validation after those decisions are approved.
-Deliver a schema, accepted/rejected fixtures, and structured error contracts.
-Completion: reviewers approve semantics and every validation rule has examples.
+Load Markdown/YAML, preserve source locations, index headings and stable IDs,
+extract tagged machine-readable definitions, validate frontmatter and report
+missing/duplicated references. Keep intermediate document/index/definition
+records for inspection. Deliver parsed specification and source-linked diagnostics.
 
-## Phase 2: Structural evaluation
+## Phase 2: Canonical model and graph construction
 
-Use NetworkX internally to inspect a validated model. Candidate checks are
-unresolved references, reachability, and cycles; whether each is an error depends
-on the approved domain policy. Define enabled checks and deterministic diagnostic
-ordering. Do not invent scores, thresholds, or assume every pipeline is a DAG.
-Completion: approved checks have positive, negative, and boundary test cases;
-evaluation does not mutate input and produces repeatable results.
+Define processor, artifact type, capability, dependency, constraint, assumption,
+evidence and finding contracts. Resolve aliases and references; validate types
+and relationships; build a typed queryable graph. Deliver a canonical model
+with validity checks, without silently interpreting unknown definitions as false.
 
-## Phase 3: Reporting and integration
+## Phase 3: Capability composition and dependency evaluation
 
-Define a versioned JSON report and an invocation surface. Decide whether a CLI
-is needed, its input format, error output, and exit codes before adding it.
-Deliver reviewed report fixtures, usage documentation, and integration checks.
-Completion: reproducible reports and documented handling of invalid input,
-evaluation findings, and internal failures.
+Forward-chain from explicitly available inputs/capabilities. Backward-chain from
+requested target artifacts to prerequisites and alternative providers. Honor all
+inputs of multi-input processors. Identify missing prerequisites, unsupported
+cycles, unreachable outputs and incompatible contracts. Cycles may be supported
+by bootstrap inputs or independent paths; do not ban them categorically.
+Deliver feasibility/gap results with evidence, derivations, assumptions, and
+proven/conditional/unresolved classifications plus explicit contradictions.
 
-## Deferred
+## Later phases
 
-Executing pipelines, arbitrary code loading, remote resource fetching, GUI work,
-plugins, performance optimization, and numeric quality scoring are outside this
-preparation. No phase is claimed complete by this scaffolding.
+Phase 4: constraint solver adapters and optimization (clingo/Z3 only when needed).
+Phase 5: broad JSON/Markdown reporting, diagrams, abstract simulation, external
+adapters and extensibility. Design selection profiles and a constraint interface
+now; defer actual solvers, LLM integration and real processor execution.
+
+## First-version acceptance questions
+
+Which stages/datasets exist? Who consumes/produces each artifact? Which required
+capabilities are declared/provided/missing? Can the target be derived from the
+available inventory? What prerequisites, assumptions or contracts block it?
+Which conclusions follow from the model, remain conditional, or are unresolved?
+Where are their supporting definitions?

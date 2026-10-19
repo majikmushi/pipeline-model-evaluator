@@ -1,56 +1,58 @@
-# Implementation details: proposed design
+# Implementation details
 
-This is an implementation specification for future bounded changes, not source
-code or evidence that those changes exist. Follow approved requirements and
-[contracts](contracts.md); unresolved details stay behind their decision gates.
+The recovered design organizes code into packages. These are future boundaries,
+not empty stubs to create now. Source currently contains only __init__.py.
 
-## Intended modules
+| Package | Responsibilities |
+| --- | --- |
+| sources/loader.py, markdown.py, definition_extractor.py | Read selected Markdown, frontmatter, headings, tagged YAML and source spans |
+| resolution/identifiers.py, references.py | Stable IDs, aliases, duplicate/missing/ambiguous references |
+| models/definitions.py, artifacts.py, capabilities.py, findings.py | Pydantic canonical records and evidence/results |
+| validation/schemas.py, contracts.py | Serialized structure, references and type/contract compatibility |
+| graphs/builder.py, queries.py | Internal typed NetworkX relationships |
+| evaluation/structural.py, dependencies.py | Structural findings, gaps and cycle support |
+| evaluation/capabilities.py, composition.py | Forward/backward reasoning, alternative providers and multi-input requirements |
+| evaluation/coverage.py | Coverage of required definitions/contracts/evidence; scope after composition |
+| output/markdown.py, json.py | Basic phase-3 result projection; broad serializers in phase 5 |
+| cli.py | Optional invocation adapter after contract agreement |
 
-| Module under src/pipeline_model_evaluator | Responsibility | Main boundary |
-| --- | --- | --- |
-| models.py | Pydantic input schema and domain values | PipelineModel |
-| parsing.py | Convert decoded input to schema; map validation errors | parse_model |
-| diagnostics.py | Immutable diagnostic values and stable ordering | Diagnostic |
-| validation.py | Cross-record IDs/references and approved constraints | validate_structure |
-| graph.py | Convert validated records to internal NetworkX graph | Internal only |
-| policy.py | Enabled rules and approved settings | EvaluationPolicy |
-| evaluation.py | Orchestrate validation/rules without side effects | evaluate |
-| reporting.py | Report model and deterministic JSON serialization | EvaluationReport, serialize_report |
-| cli.py | Optional thin adapter after DEC-005 | Process boundary |
+## Nine retained stages
 
-Only __init__.py exists now. Do not create empty executable stubs for every module.
+Load -> index -> extract -> resolve -> build -> validate -> graph -> evaluate
+-> project. Carry source identity and span through each stage. Retain intermediate
+records in a run result so a failing stage can be inspected without a full rerun.
+Do not silently extract arbitrary prose as authoritative machine definitions.
 
-## Data flow and failures
+## Inference design
 
-Decoded mapping -> Pydantic validation -> cross-record validation -> internal
-graph -> enabled rules -> ordered diagnostics -> report -> JSON.
-No graph is built when references are invalid unless an adopted policy explicitly
-defines a safe partial graph. Preserve original locations for diagnostics.
-Catch anticipated boundary errors narrowly; do not catch every exception and
-label it a model finding. Application adapters may format internal errors, but
-must signal failure distinctly.
+Use an artifact/processor relationship representation that retains AND
+requirements for a processor's multiple inputs and OR alternatives across
+providers. A bipartite typed graph is a candidate, pending DEC-003.
+Forward evaluation uses a deterministic worklist/fixed point over finite declared
+artifacts/capabilities. Record derivation dependencies for every addition.
+Backward evaluation explores providers and prerequisite sets with visited-state
+tracking; preserve alternatives rather than stopping at the first provider.
+These algorithm details are proposals to verify against agreed fixtures.
 
-## Schema and graph decisions
+Analyze strongly connected components to locate cycles, then test whether
+explicit inventory or an independent provider enables progress. A declared cycle
+alone neither proves feasibility nor invalidity. Keep conditional and unresolved
+paths distinct from supported derivations and contradictions.
 
-Pydantic configuration, strictness/coercion, extra fields, ID types, and schema
-version dispatch depend on DEC-001/002. Do not infer them from sample spelling.
-Graph vs DiGraph vs MultiDiGraph depends on DEC-003: edge direction, parallel
-edges, and self-loops. Assign stable identifiers before any reordering.
-Avoid exposing live graphs or relying on insertion order in public output.
+## Evidence and extensions
 
-## Evaluation and reporting
+Record conceptual/validated/simulated/operational evidence independently from
+declared determinism. A feasible conceptual composition is not operational proof.
+Selection profiles include targets, input inventory, uncertainty, cost and methods.
+Cost optimization and actual LLM selection are deferred.
+Start explicit constraint checks as Python rules; define an adapter boundary and
+report unsupported expressions. Add clingo/Z3 only in a later scoped change.
 
-Each approved rule has a stable code, documented preconditions, policy setting,
-and input/output fixture. Share a single diagnostic ordering function.
-Evaluate must define whether it runs validation itself and how blocking findings
-affect later rules before callers rely on it (DEC-004).
-Report identity must specify canonicalization and policy version. Keep volatile
-timestamps out of deterministic fixtures or isolate them under an explicit
-contract. Do not add score fields until their interpretation is approved.
+## Dependencies and verification
 
-## Implementation sequence
-
-Implement one work item per reviewable change with its requirement IDs and
-meaningful checks. Start with examples and contracts, then parser, cross-record
-validation, graph adapter, rules, reports, and conditional invocation adapter.
-Dependencies and exit gates are in ../planning/delivery-plan.md.
+Existing stack: uv, Pydantic, NetworkX, pytest. Markdown/frontmatter parsers are
+implementation candidates; select and lock them in P1-02 after extraction syntax
+is settled. Do not add solvers, RDF, planning frameworks or GUI dependencies now.
+Verify source-span fidelity, malformed tagged data, ambiguous references,
+multi-input gating, alternative providers, bootstrap/no-bootstrap cycles,
+explicit inventory, missing definitions, result classes and repeatable evidence.
