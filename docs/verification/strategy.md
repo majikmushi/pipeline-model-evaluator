@@ -1,0 +1,30 @@
+# Verification strategy
+
+Initial scaffold: Python 3.14.8 locked sync, imports and wheel/source build passed.
+Pytest collected zero tests (exit 5), not a passing behavioral suite.
+Python 3.12 minimum remains unverified. Planning changes require reference/link
+and register validation, not repeated runtime checks for unchanged source.
+
+## First-version acceptance cases
+
+| Requirements | Required cases |
+| --- | --- |
+| SRC-001/002/003, MOD-002 | Markdown headings/frontmatter, tagged YAML, source spans, malformed blocks, duplicate/missing/ambiguous IDs, inspect retained stages |
+| MOD-001/003, SEL-001 | Typed domain records, schema versions, artifact/contract compatibility, inventory and assumptions, selection profile, unsupported constraint |
+| EVA-001/002/003, QUA-001 | Graph fidelity/nonmutation, enabled rules, stable order and domain-only public API |
+| CMP-001 | Satisfied/unsatisfied multi-input processors; declared but unavailable artifacts; missing required capabilities |
+| CMP-002 | Target prerequisites, alternative providers, one viable and one blocked branch |
+| CMP-003 | No-bootstrap cycle, explicit bootstrap, independent provider path, unreachable output |
+| RES-001/002, REP-002 | Proven-from-model, conditional, unresolved and contradiction cases; conceptual does not imply operational; internal failures distinct |
+| SEC-001 | Model expressions/strings remain data; no execution or remote retrieval |
+| QUA-002 | Every applicable requirement mapped to actual tests and run evidence |
+
+The minimum combined fixture should include explicit inventory, a target,
+multi-input processing, alternative providers, a missing definition, assumptions
+and a cycle pair with/without bootstrap. Split into focused cases where useful.
+Review exact expected results before claiming implementation done.
+Broad REP-001 golden report compatibility is deferred to phase 5.
+
+Before delivery verify all seven first-version questions in design/phases.md.
+Keep source locations and derivations in expected outputs, not just Boolean
+reachability. Introduce CI and optional parsers in their scoped implementation PRs.
