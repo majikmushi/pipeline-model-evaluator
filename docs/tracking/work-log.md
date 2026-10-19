@@ -49,3 +49,19 @@ physical error lines. Extra domain fields are preserved but not validated deeply
 Final checks: all 27 tests also pass on Python 3.14.8; locked sync and whitespace
 checks pass. Planning validation passed for 16 work items, all references, acyclic
 dependencies and 28 documentation links.
+
+## 2026-10-20: WB-MAP-01
+
+User authorized mapping the supplied Meta-Machine Modeling and Workbench
+Requirements v0.11 as broader evaluator context. Recorded source filename,
+version/date/hash, section-to-requirement links, acceptance evidence, existing
+requirement/work links, current implementation gaps, CR-WB-001 and DEC-008.
+Added three planned design items and four deferred extensions. Full-workbench
+GUI/storage/simulation/protocol scope is explicitly deferred or outside current
+delivery. Prepared on a documentation branch based on PR #2; source code,
+dependencies and the historical requirement baseline are unchanged.
+
+Mapping validation passed: 24 unique work items, 38 requirement IDs, valid work/
+requirement/decision references, acyclic dependencies, 35 relative Markdown links,
+all 14 mapped requirement IDs, and the supplied source version/hash. Whitespace
+checks passed. Runtime tests were not rerun for documentation-only changes.

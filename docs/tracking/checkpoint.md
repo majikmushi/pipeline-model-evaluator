@@ -2,7 +2,8 @@
 
 Updated 2026-10-20 (Australia/Perth).
 Repository: https://github.com/majikmushi/pipeline-model-evaluator
-Branch: feature/specification-intake
+Branch: docs/workbench-requirements-map
+Base branch: feature/specification-intake (PR #2; open when inspected)
 
 Preparation PR #1 was verified merged. This branch adds the initial phase-1
 intake library: explicit local Markdown, frontmatter, tagged YAML definitions,
@@ -24,3 +25,12 @@ Resume: ../README.md -> ../design/intake-format.md -> ../planning/decisions.md
 canonical model contracts for P2-03. Do not run real processors or add solvers.
 No external issues, automation, independent reviewer or merge is claimed for this
 implementation branch. Main/settings were not changed by this work.
+
+## Broader reference mapping
+
+The supplied workbench v0.11 is mapped in ../requirements/workbench-alignment.md
+with source sections and a SHA-256 fingerprint. WB-MAP-01 is prepared. Three design
+items and four deferred extensions are tracked separately; phase-1 behavior and
+its existing evidence are unchanged. DEC-008 remains open for concrete contract
+adoption. Next optional design task: WB-DES-01, alongside current P1-01/P2-03
+planning, with no new implementation claimed.
