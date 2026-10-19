@@ -2,53 +2,31 @@
 
 Updated 2026-10-20 (Australia/Perth).
 Repository: https://github.com/majikmushi/pipeline-model-evaluator
-Branch: docs/land-workbench-alignment
-Base branch: main after PR #2 merged
+Baseline: main after PR #4 merged. Current proposal branch: docs/module-concern-contracts.
 
-Preparation PR #1 and phase-1 PR #2 were verified merged. The repository has the initial phase-1
-intake library: explicit local Markdown, frontmatter, tagged YAML definitions,
-heading/block line evidence, typed ID/alias reference resolution and diagnostics.
-Documents, indexes, blocks and definition/reference records are retained on
-partial failures. See ../design/intake-format.md for the concrete proposed format.
+PR #1 prepared the Python scaffold and planning records. PR #2 merged the
+phase-1 intake library. PR #4 merged the workbench v0.11 mapping and the
+WB-DES-01/02 design proposals into main. The separate stacked PRs #5/6 are
+historical; no current work depends on merging them.
 
-P1-02/P1-03 are merged and tested for this intake scope. P1-01 remains in progress:
-canonical contracts, representative inventory/target and expected feasibility
-outcomes still need design work. The exact intake syntax was merged for its scoped library API;
-merely coding it does not imply owner adoption of every contract.
+The implementation reads explicit local Markdown with frontmatter and tagged
+YAML definitions. It retains source/index/definition/reference records and
+source-linked diagnostics on partial failures. P1-02/P1-03 are done for this
+scoped intake; P1-01 remains in progress for representative inventory, target
+and expected feasibility cases. The intake syntax is an implemented proposal;
+its merge does not settle the broader canonical schema.
 
-Verification: 27 tests pass on Python 3.12.14; wheel/source distribution build
-passes. Other final checks are recorded in work-log.md. Phase-2 canonical graphs
-and phase-3 composition are not implemented; intake valid does not mean feasible.
+Current design proposals: ../design/workbench-contract-boundaries.md covers
+revision, context, extension and graph-kind boundaries (WB-DES-01), and
+../design/evaluation-scenarios.md covers feasibility, availability, alternatives,
+uncertainty and provenance (WB-DES-02). This branch adds
+../design/module-boundaries.md for WB-DES-03. The user accepted the core
+DEC-002/003 boundaries; exact wire and compatibility details, DEC-004/008 and
+the WB-DES-03 concern proposal remain open. Phase-2 canonical model/graphs and
+phase-3 composition are not implemented.
 
-Resume: ../README.md -> ../design/intake-format.md -> ../planning/decisions.md
--> work-items.json. Next bounded work is completing P1-01 and reviewing the
-canonical model contracts for P2-03. Do not run real processors or add solvers.
-No external issues, automation or independent reviewer is claimed. This
-documentation branch proposes carrying the workbench mapping onto main.
-
-## Broader reference mapping
-
-The supplied workbench v0.11 is mapped in ../requirements/workbench-alignment.md
-with source sections and a SHA-256 fingerprint. WB-MAP-01 was merged into the phase-1 branch after PR #2 had merged into main;
-this branch carries it onto main. Three design
-items and four deferred extensions are tracked separately; phase-1 behavior and
-its existing evidence are unchanged. DEC-008 remains open for concrete contract
-adoption. WB-DES-01 has a separate proposed contract document alongside current
-P1-01/P2-03 planning, with no new implementation claimed.
-
-## Contract proposal after mapping
-
-Draft PR #4 targets main and contains the workbench mapping plus both design
-proposals in one review. The WB-DES-01 proposal is in
-../design/workbench-contract-boundaries.md. It
-illustrates identity/revision/context/extension records, separates graph kinds
-and cycle policies, and names effects on DEC-002/003/008. It is not an adopted
-schema or tested implementation. Review the examples
-before taking P2-03/P2-01 implementation work. WB-DES-02 has a proposed
-fixture-design document below.
-
-WB-DES-02 now has a proposed scenario matrix in ../design/evaluation-scenarios.md.
-It separates abstract feasibility, provider availability and operational proof,
-with explicit alternatives, uncertainty, contradictions, bootstrap and rerun
-provenance. The owner still needs to resolve DEC-004/008 and inventory semantics
-before Coder converts these examples into executable phase-3 acceptance tests.
+Next bounded work: review WB-DES-03 ownership and error contracts, then complete
+P1-01 fixtures and settle the remaining details before P2-03/P2-01 runtime
+implementation. Do not run real processors or add solvers. Resume through
+../README.md, ../design/intake-format.md, ../planning/decisions.md and
+work-items.json. Work-log.md has validation and merge history.

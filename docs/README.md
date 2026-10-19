@@ -29,3 +29,5 @@ is review material for WB-DES-01 and the open design decisions.
 The [evaluation acceptance scenarios](design/evaluation-scenarios.md) propose
 expected feasibility, availability, evidence and alternative-provider outcomes
 for WB-DES-02; they are not executable results yet.
+The [module concern proposal](design/module-boundaries.md) records ownership,
+dependency direction and diagnostic/evidence correlation for WB-DES-03.

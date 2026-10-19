@@ -97,3 +97,22 @@ At the user's direction, advanced the PR #4 branch to include the WB-DES-01
 and WB-DES-02 proposal commits. PR #4 is the single draft targeting main.
 PR #5 was marked merged into that branch by GitHub; PR #6 was closed as
 superseded. No merge into main or adoption of open design decisions occurred.
+
+## 2026-10-20: PR #4 merge and WB-DES-03 proposal
+
+Verified PR #4 merged into main. Prepared a fresh documentation branch from
+that merged main for module concern contracts: owned data, interfaces,
+invariants, error/exclusion boundaries and verification obligations for intake,
+canonicalization, validation, graph projection, composition, result assembly
+and external adapters. Clarified diagnostic logs, evaluation evidence and
+project history with correlation examples. Corrected stale phase/source status
+in the implementation and continuation docs. No runtime code or dependency
+change; documentation validation is recorded with this proposal.
+
+## 2026-10-20: DEC-002/003 core direction accepted
+
+The user affirmed decision items 2 and 3 in chat. Recorded acceptance of the
+stable identity/revision/context/extension and typed graph/AND-OR/bootstrap
+boundaries in the decision register. Exact revision identifiers, wire shape,
+compatibility and graph query details remain open; DEC-004/008 were not
+accepted. This is a documentation decision record, with no runtime change.

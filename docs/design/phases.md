@@ -1,7 +1,9 @@
 # Implementation phases from the recovered plan
 
 Source: [reconciliation](../planning/source-reconciliation.md).
-Current task remains preparation only; none of these feature phases is complete.
+Phase-1 intake is implemented for the documented scoped format. Its broader
+P1-01 representative fixtures remain in progress; phases 2 and 3 are not
+implemented.
 
 ## Phase 1: Specification intake and structural validation
 

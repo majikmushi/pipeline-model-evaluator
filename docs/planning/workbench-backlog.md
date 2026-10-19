@@ -14,12 +14,16 @@ authoritative. No external issue board or notifications are created.
 | WB-DES-03 | Module concern contracts, dependency direction and diagnostic/evidence correlation | Current module boundaries and result proposal available | Purpose/state/invariants/API/errors/exclusions/test matrix per affected module; declared logging/evidence owners |
 
 WB-DES-01 now has a [reviewable boundary proposal](../design/workbench-contract-boundaries.md).
-Its schema examples and acceptance cases are proposed; DEC-002/003/008 and the
-final canonical wire/compatibility contract remain open.
+Its core identity and graph boundaries are accepted for DEC-002/003; schema
+examples and acceptance cases remain illustrative. DEC-008 and the detailed
+canonical wire/compatibility contract remain open.
 WB-DES-02 has [proposed expected scenarios](../design/evaluation-scenarios.md)
 for abstract feasibility, provider availability, alternatives, uncertainty,
 contradiction, bootstrap and rerun provenance. Exact executable oracles depend
 on the open result, inventory and revision decisions.
+WB-DES-03 has a [module concern proposal](../design/module-boundaries.md)
+covering purpose, owned state, interfaces, errors, exclusions, verification and
+diagnostic/evidence correlation. Adoption of public contracts remains open.
 
 DEC-008 records adoption questions. Design work may proceed to make them concrete;
 runtime implementation of these additions requires resolution of the affected

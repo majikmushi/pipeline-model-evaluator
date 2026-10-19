@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated": "2026-10-20",
-  "status_scope": "Implementation prepared for PR review; not merge or owner adoption status. P1-02/P1-03 use the explicit intake proposal while broader P1-01 remains in progress.",
+  "status_scope": "PRs #1, #2 and #4 merged; WB-DES-03 is proposed in PR #8. DEC-002/003 core directions were accepted by the user, with wire/compatibility details still open. P1-01 remains in progress.",
   "items": [
     {
       "id": "PREP-01",
@@ -278,7 +278,7 @@
         "WB-006"
       ],
       "responsible_role": "domain designer (unassigned)",
-      "evidence": "Reviewable proposal in docs/design/workbench-contract-boundaries.md; adoption and canonical wire/compatibility decisions remain open."
+      "evidence": "Core DEC-002/003 boundaries accepted by the user; examples in docs/design/workbench-contract-boundaries.md. Canonical wire, revision-ID and compatibility details remain open."
     },
     {
       "id": "WB-DES-02",
@@ -299,7 +299,7 @@
     {
       "id": "WB-DES-03",
       "title": "Specify module concern and diagnostic correlation contracts",
-      "status": "planned",
+      "status": "in_progress",
       "depends_on": [
         "WB-DES-01"
       ],
@@ -309,7 +309,7 @@
         "WB-010"
       ],
       "responsible_role": "domain designer (unassigned)",
-      "evidence": null
+      "evidence": "Reviewable concern contracts in docs/design/module-boundaries.md; public API shapes, remaining DEC-002/003 details and DEC-004/008 adoption remain open."
     },
     {
       "id": "WB-EXT-01",
