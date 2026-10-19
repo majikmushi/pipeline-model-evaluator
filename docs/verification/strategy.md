@@ -36,6 +36,10 @@ checks are planned, not executed runtime tests. Prioritize revision identity,
 context/source separation, graph-kind cycle distinctions and feasibility versus
 provider availability when the respective contracts are selected. Retaining
 extra YAML fields does not satisfy extension round-trip or semantic validation.
+The [WB-DES-02 scenario matrix](../design/evaluation-scenarios.md) proposes
+specific inputs, conclusions and provenance assertions. It is design evidence,
+not an executed test suite; turn it into runtime fixtures after DEC-002/003/004/008
+and the inventory completeness contract are selected.
 
 For this documentation change: validate work/requirement/decision references,
 acyclic dependencies, local links and source section/version/hash metadata.

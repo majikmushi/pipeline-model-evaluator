@@ -16,6 +16,10 @@ authoritative. No external issue board or notifications are created.
 WB-DES-01 now has a [reviewable boundary proposal](../design/workbench-contract-boundaries.md).
 Its schema examples and acceptance cases are proposed; DEC-002/003/008 and the
 final canonical wire/compatibility contract remain open.
+WB-DES-02 has [proposed expected scenarios](../design/evaluation-scenarios.md)
+for abstract feasibility, provider availability, alternatives, uncertainty,
+contradiction, bootstrap and rerun provenance. Exact executable oracles depend
+on the open result, inventory and revision decisions.
 
 DEC-008 records adoption questions. Design work may proceed to make them concrete;
 runtime implementation of these additions requires resolution of the affected

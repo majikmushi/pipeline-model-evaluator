@@ -54,3 +54,8 @@ provides illustrative records, graph-specific cycle rules and explicit effects
 on DEC-002/003. It does not resolve those decisions: public revision identifiers,
 canonicalization, context binding and compatibility still need selection and
 acceptance fixtures before implementation.
+
+The WB-DES-02 [acceptance scenarios](../design/evaluation-scenarios.md) make
+DEC-004/008 reviewable without selecting a result encoding. Inventory
+completeness, unsupported-constraint classification and rule disabling remain
+open details; executable fixtures must follow the adopted choices.

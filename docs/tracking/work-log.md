@@ -82,3 +82,11 @@ policies, traceability to DEC-002/003/008 and reviewable acceptance scenarios.
 The proposal does not change the merged intake behavior or settle the canonical
 wire format. Documentation links and work-item references were checked; runtime
 tests were not rerun for this documentation-only branch.
+
+## 2026-10-20: WB-DES-02 acceptance proposal
+
+Prepared a scenario matrix for conceptual feasibility, provider availability,
+alternative prerequisite sets, unsupported constraints, contradictions,
+bootstrap and rerun provenance. Linked it to P3-06/QA-01 and the open decisions.
+The YAML result envelope is illustrative. No runtime inference or report format
+was implemented; documentation structure and examples were checked.

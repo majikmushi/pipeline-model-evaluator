@@ -43,5 +43,11 @@ proposal for WB-DES-01 is in ../design/workbench-contract-boundaries.md. It
 illustrates identity/revision/context/extension records, separates graph kinds
 and cycle policies, and names effects on DEC-002/003/008. It is not an adopted
 schema or tested implementation. Review the branch dependency and examples
-before taking P2-03/P2-01 implementation work; WB-DES-02 remains the next
-fixture-design task.
+before taking P2-03/P2-01 implementation work. WB-DES-02 has a proposed
+fixture-design document below.
+
+WB-DES-02 now has a proposed scenario matrix in ../design/evaluation-scenarios.md.
+It separates abstract feasibility, provider availability and operational proof,
+with explicit alternatives, uncertainty, contradictions, bootstrap and rerun
+provenance. The owner still needs to resolve DEC-004/008 and inventory semantics
+before Coder converts these examples into executable phase-3 acceptance tests.

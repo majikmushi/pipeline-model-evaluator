@@ -283,7 +283,7 @@
     {
       "id": "WB-DES-02",
       "title": "Specify evidence, availability and acceptance scenarios",
-      "status": "planned",
+      "status": "in_progress",
       "depends_on": [
         "WB-DES-01"
       ],
@@ -294,7 +294,7 @@
         "WB-012"
       ],
       "responsible_role": "domain designer (unassigned)",
-      "evidence": null
+      "evidence": "Reviewable scenarios in docs/design/evaluation-scenarios.md; result encoding, inventory completeness and adopted executable oracles remain open."
     },
     {
       "id": "WB-DES-03",
