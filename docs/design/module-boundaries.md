@@ -2,8 +2,10 @@
 
 Status: WB-DES-03 design proposal, 2026-10-20. This defines ownership and
 dependency direction for the existing phase-1 intake and possible phase-2/3
-modules. It does not create those later modules or select the open canonical
-schema, graph representation or result encoding in DEC-002/003/004/008.
+modules. It does not create those later modules or select the remaining canonical
+schema, graph representation or result encoding details in DEC-002/003/004/008.
+The user has accepted the core DEC-002/003 boundaries; this concern proposal
+remains review material.
 
 ## Direction of dependencies
 
@@ -64,7 +66,7 @@ finding. Error containers and public serialization remain DEC-004.
 ## Review and handoff
 
 This proposal affects P2-03, P2-01/02 and P3-06. Before implementation, review
-ownership of canonical revision identity, partial build results, inventory
+the remaining revision-ID and wire choices, partial build results, inventory
 completeness, graph query shapes and result/error containers alongside
 DEC-002/003/004/008. QA-01 should turn each row's obligations into meaningful
 checks when the relevant module exists. Existing intake tests validate only

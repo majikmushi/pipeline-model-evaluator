@@ -30,7 +30,8 @@ Do not silently extract arbitrary prose as authoritative machine definitions.
 
 Use an artifact/processor relationship representation that retains AND
 requirements for a processor's multiple inputs and OR alternatives across
-providers. A bipartite typed graph is a candidate, pending DEC-003.
+providers. A bipartite typed graph remains an implementation candidate;
+DEC-003 accepts the semantics but leaves the concrete projection open.
 Forward evaluation uses a deterministic worklist/fixed point over finite declared
 artifacts/capabilities. Record derivation dependencies for every addition.
 Backward evaluation explores providers and prerequisite sets with visited-state

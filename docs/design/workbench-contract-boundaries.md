@@ -1,8 +1,9 @@
 # Proposed revision, context, extension and graph contracts
 
-Status: design proposal for WB-DES-01, 2026-10-20. This is an input to DEC-002,
-DEC-003 and DEC-008, not an adopted wire schema or implemented API. The phase-1
-`inspect_sources` format remains the current executable intake boundary.
+Status: core identity/context/extension and graph-kind boundaries accepted for
+DEC-002/003 by the user on 2026-10-20. The examples remain illustrative input
+to unresolved wire details and DEC-008; they are not an implemented API. The
+phase-1 `inspect_sources` format remains the current executable intake boundary.
 
 ## Contract boundaries
 
@@ -94,7 +95,7 @@ to use one mutable graph object as the domain model. A NetworkX adapter may
 implement graph checks, but public records and result evidence must remain
 independent of NetworkX objects.
 
-## Proposed effects on existing decisions and work
+## Accepted direction and remaining work
 
 - **DEC-002 / P2-03:** define identity namespace, revision creation, source
   snapshot, context binding, extension envelope and conversion from phase-1

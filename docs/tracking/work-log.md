@@ -108,3 +108,11 @@ and external adapters. Clarified diagnostic logs, evaluation evidence and
 project history with correlation examples. Corrected stale phase/source status
 in the implementation and continuation docs. No runtime code or dependency
 change; documentation validation is recorded with this proposal.
+
+## 2026-10-20: DEC-002/003 core direction accepted
+
+The user affirmed decision items 2 and 3 in chat. Recorded acceptance of the
+stable identity/revision/context/extension and typed graph/AND-OR/bootstrap
+boundaries in the decision register. Exact revision identifiers, wire shape,
+compatibility and graph query details remain open; DEC-004/008 were not
+accepted. This is a documentation decision record, with no runtime change.

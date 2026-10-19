@@ -20,12 +20,13 @@ Current design proposals: ../design/workbench-contract-boundaries.md covers
 revision, context, extension and graph-kind boundaries (WB-DES-01), and
 ../design/evaluation-scenarios.md covers feasibility, availability, alternatives,
 uncertainty and provenance (WB-DES-02). This branch adds
-../design/module-boundaries.md for WB-DES-03. These are review inputs for
-DEC-002/003/004/008, not adopted public wire contracts. Phase-2 canonical
-model/graphs and phase-3 composition are not implemented.
+../design/module-boundaries.md for WB-DES-03. The user accepted the core
+DEC-002/003 boundaries; exact wire and compatibility details, DEC-004/008 and
+the WB-DES-03 concern proposal remain open. Phase-2 canonical model/graphs and
+phase-3 composition are not implemented.
 
 Next bounded work: review WB-DES-03 ownership and error contracts, then complete
-P1-01 fixtures and settle the affected decisions before P2-03/P2-01 runtime
+P1-01 fixtures and settle the remaining details before P2-03/P2-01 runtime
 implementation. Do not run real processors or add solvers. Resume through
 ../README.md, ../design/intake-format.md, ../planning/decisions.md and
 work-items.json. Work-log.md has validation and merge history.
