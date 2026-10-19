@@ -38,11 +38,12 @@ P1-01/P2-03 planning, with no new implementation claimed.
 
 ## Contract proposal after mapping
 
-Draft PR #4 targets main to land the workbench mapping. A subsequent design
-proposal for WB-DES-01 is in ../design/workbench-contract-boundaries.md. It
+Draft PR #4 targets main and contains the workbench mapping plus both design
+proposals in one review. The WB-DES-01 proposal is in
+../design/workbench-contract-boundaries.md. It
 illustrates identity/revision/context/extension records, separates graph kinds
 and cycle policies, and names effects on DEC-002/003/008. It is not an adopted
-schema or tested implementation. Review the branch dependency and examples
+schema or tested implementation. Review the examples
 before taking P2-03/P2-01 implementation work. WB-DES-02 has a proposed
 fixture-design document below.
 

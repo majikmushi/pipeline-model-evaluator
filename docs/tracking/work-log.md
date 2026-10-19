@@ -90,3 +90,10 @@ alternative prerequisite sets, unsupported constraints, contradictions,
 bootstrap and rerun provenance. Linked it to P3-06/QA-01 and the open decisions.
 The YAML result envelope is illustrative. No runtime inference or report format
 was implemented; documentation structure and examples were checked.
+
+## 2026-10-20: consolidate draft review
+
+At the user's direction, advanced the PR #4 branch to include the WB-DES-01
+and WB-DES-02 proposal commits. PR #4 is the single draft targeting main.
+PR #5 was marked merged into that branch by GitHub; PR #6 was closed as
+superseded. No merge into main or adoption of open design decisions occurred.
