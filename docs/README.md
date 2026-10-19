@@ -20,3 +20,12 @@ The earlier plan is now recovered. Read [source reconciliation](planning/source-
 for corrected phase boundaries and the remaining concrete design decisions.
 
 Implemented phase 1: [intake format and API](design/intake-format.md).
+
+Broader context: [workbench requirements alignment](requirements/workbench-alignment.md)
+and [workbench-derived backlog](planning/workbench-backlog.md). These identify
+applicable evaluator contracts and explicitly deferred workbench features.
+The [revision, context, extension and graph boundary proposal](design/workbench-contract-boundaries.md)
+is review material for WB-DES-01 and the open design decisions.
+The [evaluation acceptance scenarios](design/evaluation-scenarios.md) propose
+expected feasibility, availability, evidence and alternative-provider outcomes
+for WB-DES-02; they are not executable results yet.

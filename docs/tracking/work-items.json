@@ -248,6 +248,132 @@
       ],
       "responsible_role": "implementer",
       "evidence": null
+    },
+    {
+      "id": "WB-MAP-01",
+      "title": "Map workbench v0.11 into evaluator requirements and backlog",
+      "status": "done",
+      "depends_on": [
+        "RECON-01"
+      ],
+      "blocked_by": [],
+      "requirements": [
+        "WB-011"
+      ],
+      "responsible_role": "planner",
+      "evidence": "Source/version/hash, traceability matrix, backlog and change proposal in docs/requirements/workbench-alignment.md; documentation validation in work-log.md"
+    },
+    {
+      "id": "WB-DES-01",
+      "title": "Propose revision, context, extension and graph-kind contracts",
+      "status": "in_progress",
+      "depends_on": [
+        "WB-MAP-01"
+      ],
+      "blocked_by": [],
+      "requirements": [
+        "WB-001",
+        "WB-003",
+        "WB-004",
+        "WB-006"
+      ],
+      "responsible_role": "domain designer (unassigned)",
+      "evidence": "Reviewable proposal in docs/design/workbench-contract-boundaries.md; adoption and canonical wire/compatibility decisions remain open."
+    },
+    {
+      "id": "WB-DES-02",
+      "title": "Specify evidence, availability and acceptance scenarios",
+      "status": "in_progress",
+      "depends_on": [
+        "WB-DES-01"
+      ],
+      "blocked_by": [],
+      "requirements": [
+        "WB-002",
+        "WB-005",
+        "WB-012"
+      ],
+      "responsible_role": "domain designer (unassigned)",
+      "evidence": "Reviewable scenarios in docs/design/evaluation-scenarios.md; result encoding, inventory completeness and adopted executable oracles remain open."
+    },
+    {
+      "id": "WB-DES-03",
+      "title": "Specify module concern and diagnostic correlation contracts",
+      "status": "planned",
+      "depends_on": [
+        "WB-DES-01"
+      ],
+      "blocked_by": [],
+      "requirements": [
+        "WB-008",
+        "WB-010"
+      ],
+      "responsible_role": "domain designer (unassigned)",
+      "evidence": null
+    },
+    {
+      "id": "WB-EXT-01",
+      "title": "Evaluate dimension-specific preservation assessments",
+      "status": "deferred",
+      "depends_on": [
+        "WB-DES-02"
+      ],
+      "blocked_by": [
+        "DEC-008"
+      ],
+      "requirements": [
+        "WB-007"
+      ],
+      "responsible_role": "domain designer (unassigned)",
+      "evidence": null
+    },
+    {
+      "id": "WB-EXT-02",
+      "title": "Design durable checkpoint and compatible restore",
+      "status": "deferred",
+      "depends_on": [
+        "WB-DES-03"
+      ],
+      "blocked_by": [
+        "DEC-008"
+      ],
+      "requirements": [
+        "WB-009"
+      ],
+      "responsible_role": "domain designer (unassigned)",
+      "evidence": null
+    },
+    {
+      "id": "WB-EXT-03",
+      "title": "Define selected workbench or protocol adapter",
+      "status": "deferred",
+      "depends_on": [
+        "WB-DES-03"
+      ],
+      "blocked_by": [
+        "DEC-008"
+      ],
+      "requirements": [
+        "WB-013"
+      ],
+      "responsible_role": "domain designer (unassigned)",
+      "evidence": null
+    },
+    {
+      "id": "WB-EXT-04",
+      "title": "Refine impact, scenarios, health and notebook ideas",
+      "status": "deferred",
+      "depends_on": [
+        "WB-MAP-01"
+      ],
+      "blocked_by": [
+        "DEC-008"
+      ],
+      "requirements": [
+        "WB-014"
+      ],
+      "responsible_role": "domain designer (unassigned)",
+      "evidence": null
     }
   ]
 }

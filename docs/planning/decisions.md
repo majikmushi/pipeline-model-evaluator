@@ -33,3 +33,29 @@ fields for phase 2 without validating their semantics.
 The broader DEC-002 canonical schema and DEC-003/004 remain open. Intake work
 proceeds against the documented proposal; no graph or inference choices are
 adopted as a side effect. Python 3.12 runtime results are recorded in the work log.
+
+## DEC-008: workbench-derived contract adoption (open)
+
+The user authorized mapping the supplied workbench v0.11 document into evaluator
+requirements and backlog on 2026-10-20. The mapping records proposed WB-001–014,
+not approval of every source proposal or authorization for full-workbench runtime
+implementation. Source version/hash and CR-WB-001 are recorded in
+../requirements/workbench-alignment.md.
+
+Resolve exact revision/snapshot identity, context and extension representation,
+graph-kind boundaries, run/evidence provenance and module ownership through
+WB-DES-01/02/03. Link accepted choices to DEC-002/003/004 and their fixtures.
+Deferred integrations and ideas require their own selected scope. Preserve
+historical phase-1 evidence; no claim of conformance to KerML, SysML, LSP or MCP
+is made by retaining a reference to those systems.
+
+The WB-DES-01 [contract boundary proposal](../design/workbench-contract-boundaries.md)
+provides illustrative records, graph-specific cycle rules and explicit effects
+on DEC-002/003. It does not resolve those decisions: public revision identifiers,
+canonicalization, context binding and compatibility still need selection and
+acceptance fixtures before implementation.
+
+The WB-DES-02 [acceptance scenarios](../design/evaluation-scenarios.md) make
+DEC-004/008 reviewable without selecting a result encoding. Inventory
+completeness, unsupported-constraint classification and rule disabling remain
+open details; executable fixtures must follow the adopted choices.

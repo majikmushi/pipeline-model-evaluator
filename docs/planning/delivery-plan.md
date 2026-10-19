@@ -34,3 +34,12 @@ phase 3. Do not interpret old ID names as current phase membership.
 Done requires reviewed affected design, implementation where applicable,
 meaningful executed checks, evidence and updated checkpoint. Prepared documents
 do not complete feature work or imply PR merge.
+
+## Workbench alignment workstream
+
+WB-MAP-01 captures the supplied v0.11 source and applicability mapping.
+WB-DES-01/02/03 prepare contract proposals for future canonical model, result
+semantics and module design; see [workbench backlog](workbench-backlog.md).
+WB-EXT-01 through WB-EXT-04 are deferred. They do not add mandatory dependencies
+to phases 1–3 merely by appearing in the register. Existing milestones retain
+their scope pending reviewed impact/adoption decisions.

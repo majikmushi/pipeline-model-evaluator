@@ -28,3 +28,19 @@ Broad REP-001 golden report compatibility is deferred to phase 5.
 Before delivery verify all seven first-version questions in design/phases.md.
 Keep source locations and derivations in expected outputs, not just Boolean
 reachability. Introduce CI and optional parsers in their scoped implementation PRs.
+
+## Workbench alignment verification
+
+WB-001–014 acceptance evidence is in the requirement alignment matrix. These
+checks are planned, not executed runtime tests. Prioritize revision identity,
+context/source separation, graph-kind cycle distinctions and feasibility versus
+provider availability when the respective contracts are selected. Retaining
+extra YAML fields does not satisfy extension round-trip or semantic validation.
+The [WB-DES-02 scenario matrix](../design/evaluation-scenarios.md) proposes
+specific inputs, conclusions and provenance assertions. It is design evidence,
+not an executed test suite; turn it into runtime fixtures after DEC-002/003/004/008
+and the inventory completeness contract are selected.
+
+For this documentation change: validate work/requirement/decision references,
+acyclic dependencies, local links and source section/version/hash metadata.
+Runtime tests need not be rerun for unchanged source/dependencies.
