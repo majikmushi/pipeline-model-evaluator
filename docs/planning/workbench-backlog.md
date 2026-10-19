@@ -13,6 +13,10 @@ authoritative. No external issue board or notifications are created.
 | WB-DES-02 | Feasibility/evidence/provider distinction and small acceptance scenarios | WB-DES-01 examples available | Expected results for conceptual feasibility vs provider availability, alternative providers, unknown evidence and source derivation; inputs linked to P3-06 and QA-01 |
 | WB-DES-03 | Module concern contracts, dependency direction and diagnostic/evidence correlation | Current module boundaries and result proposal available | Purpose/state/invariants/API/errors/exclusions/test matrix per affected module; declared logging/evidence owners |
 
+WB-DES-01 now has a [reviewable boundary proposal](../design/workbench-contract-boundaries.md).
+Its schema examples and acceptance cases are proposed; DEC-002/003/008 and the
+final canonical wire/compatibility contract remain open.
+
 DEC-008 records adoption questions. Design work may proceed to make them concrete;
 runtime implementation of these additions requires resolution of the affected
 contract choices. No owner approval or engineering design is inferred from an

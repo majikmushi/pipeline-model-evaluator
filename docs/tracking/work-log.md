@@ -73,3 +73,12 @@ branch after PR #2 had merged, leaving the mapping absent from main. Applied the
 PR #3 mapping commit cleanly to current main in docs/land-workbench-alignment.
 Updated the checkpoint to reflect the actual merge state. No evaluator source
 code or dependency changes were made.
+
+## 2026-10-20: WB-DES-01 boundary proposal
+
+Prepared a separate documentation proposal on top of the workbench mapping
+branch. Added worked revision/context/extension examples, graph-kind and cycle
+policies, traceability to DEC-002/003/008 and reviewable acceptance scenarios.
+The proposal does not change the merged intake behavior or settle the canonical
+wire format. Documentation links and work-item references were checked; runtime
+tests were not rerun for this documentation-only branch.

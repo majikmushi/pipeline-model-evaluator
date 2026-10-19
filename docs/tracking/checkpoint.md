@@ -33,5 +33,15 @@ with source sections and a SHA-256 fingerprint. WB-MAP-01 was merged into the ph
 this branch carries it onto main. Three design
 items and four deferred extensions are tracked separately; phase-1 behavior and
 its existing evidence are unchanged. DEC-008 remains open for concrete contract
-adoption. Next optional design task: WB-DES-01, alongside current P1-01/P2-03
-planning, with no new implementation claimed.
+adoption. WB-DES-01 has a separate proposed contract document alongside current
+P1-01/P2-03 planning, with no new implementation claimed.
+
+## Contract proposal after mapping
+
+Draft PR #4 targets main to land the workbench mapping. A subsequent design
+proposal for WB-DES-01 is in ../design/workbench-contract-boundaries.md. It
+illustrates identity/revision/context/extension records, separates graph kinds
+and cycle policies, and names effects on DEC-002/003/008. It is not an adopted
+schema or tested implementation. Review the branch dependency and examples
+before taking P2-03/P2-01 implementation work; WB-DES-02 remains the next
+fixture-design task.

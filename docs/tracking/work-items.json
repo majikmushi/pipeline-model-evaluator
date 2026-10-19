@@ -266,7 +266,7 @@
     {
       "id": "WB-DES-01",
       "title": "Propose revision, context, extension and graph-kind contracts",
-      "status": "planned",
+      "status": "in_progress",
       "depends_on": [
         "WB-MAP-01"
       ],
@@ -278,7 +278,7 @@
         "WB-006"
       ],
       "responsible_role": "domain designer (unassigned)",
-      "evidence": null
+      "evidence": "Reviewable proposal in docs/design/workbench-contract-boundaries.md; adoption and canonical wire/compatibility decisions remain open."
     },
     {
       "id": "WB-DES-02",

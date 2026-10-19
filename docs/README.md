@@ -24,3 +24,5 @@ Implemented phase 1: [intake format and API](design/intake-format.md).
 Broader context: [workbench requirements alignment](requirements/workbench-alignment.md)
 and [workbench-derived backlog](planning/workbench-backlog.md). These identify
 applicable evaluator contracts and explicitly deferred workbench features.
+The [revision, context, extension and graph boundary proposal](design/workbench-contract-boundaries.md)
+is review material for WB-DES-01 and the open design decisions.

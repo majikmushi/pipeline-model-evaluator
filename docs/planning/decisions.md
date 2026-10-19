@@ -48,3 +48,9 @@ WB-DES-01/02/03. Link accepted choices to DEC-002/003/004 and their fixtures.
 Deferred integrations and ideas require their own selected scope. Preserve
 historical phase-1 evidence; no claim of conformance to KerML, SysML, LSP or MCP
 is made by retaining a reference to those systems.
+
+The WB-DES-01 [contract boundary proposal](../design/workbench-contract-boundaries.md)
+provides illustrative records, graph-specific cycle rules and explicit effects
+on DEC-002/003. It does not resolve those decisions: public revision identifiers,
+canonicalization, context binding and compatibility still need selection and
+acceptance fixtures before implementation.
