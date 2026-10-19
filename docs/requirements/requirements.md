@@ -35,3 +35,12 @@ Work status lives in ../tracking/work-items.json.
 No numeric score or performance threshold is specified. Concrete serialization,
 tag markers and compatibility rules require DEC-002/003/004. Basic phase-3
 feasibility results are required even though broad reporting is phase 5.
+
+## Broader workbench reference
+
+The [workbench alignment matrix](workbench-alignment.md) adds WB-001–014 as
+traceable evaluator proposals and deferred ideas from the supplied v0.11 document.
+It records source sections, acceptance evidence, existing requirement links and
+work IDs. These additions do not retroactively change the phase-1 contract or
+claim that the workbench is implemented. Review CR-WB-001 and DEC-008 before
+adopting concrete schema/runtime changes.
