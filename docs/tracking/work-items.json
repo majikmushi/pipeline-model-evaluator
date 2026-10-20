@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated": "2026-10-20",
-  "status_scope": "PRs #1, #2 and #4 merged; WB-DES-03 is proposed in PR #8. DEC-002/003 core directions were accepted by the user, with wire/compatibility details still open. P1-01 remains in progress.",
+  "status_scope": "PRs #1, #2, #4 and #8 merged. DEC-002/003 core directions accepted; remaining details and DEC-004/008 are proposed for review in docs/design/reengineering-decision-proposals.md. P1-01 remains in progress; no phase-2/3 runtime implementation is claimed.",
   "items": [
     {
       "id": "PREP-01",
@@ -43,7 +43,7 @@
         "MOD-003"
       ],
       "responsible_role": "owner/domain analyst",
-      "evidence": "Initial intake syntax and source fixture are proposed in docs/design/intake-format.md and tests/fixtures/minimal.md; inventory/target/feasibility cases and semantic decisions remain open."
+      "evidence": "Initial intake syntax and source fixture are implemented; docs/design/evaluation-scenarios.md and reengineering-decision-proposals.md propose inventory/target/feasibility cases. Exact executable fixtures and remaining semantic decisions are open."
     },
     {
       "id": "P1-02",

@@ -31,3 +31,6 @@ expected feasibility, availability, evidence and alternative-provider outcomes
 for WB-DES-02; they are not executable results yet.
 The [module concern proposal](design/module-boundaries.md) records ownership,
 dependency direction and diagnostic/evidence correlation for WB-DES-03.
+The [reengineering decision recommendations](design/reengineering-decision-proposals.md)
+give concrete options for remaining DEC-002/003 details and DEC-004/008; they
+are proposals, not adopted decisions.
