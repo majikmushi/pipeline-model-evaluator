@@ -66,6 +66,16 @@ roles, but public queries return domain records. A processor's required inputs
 and capabilities remain one conjunctive requirement set; separate providers
 remain alternatives, even if graph edges are used for indexing.
 
+Specify an evaluation rule for each relationship predicate rather than treating
+all edges as interchangeable. `consumes` and `requires` contribute
+prerequisites; `produces` and `provides` contribute claimed outputs or
+abilities only when that processor's full prerequisite set passes. Distinct
+providers form alternatives; a branch is feasible only when its complete
+conjunctive set is satisfied. Keep `derived_from`, `supported_by` and
+`satisfies` separate from dataflow: neither a citation nor a requirement link
+makes an artifact available. Graph reachability may locate candidates but
+cannot by itself establish composition or transitive impact.
+
 For v1, require exact artifact-type identity **and schema revision** and exact
 capability identity. An explicit, validated processor/adapter may transform
 between different types. Do not infer subtype, version-range or unit conversion
@@ -93,7 +103,14 @@ stable order, independent of run ID.
 Each finding has a claim kind (structural validity, abstract feasibility,
 provider availability or operational evidence), epistemic class (`proven`,
 `conditional`, `unresolved`), separate severity, and evidence/rule/assumption
-references. Contradictions and invalid compositions are explicit finding kinds;
+references. It also identifies the evaluation method and scope, the premises
+used, and a short limit on what that method establishes. For example, syntax
+acceptance establishes parseability, schema conformance establishes the selected
+shape, and seeded composition establishes feasibility only within the pinned
+model, inventory and rules. None establishes that a declared processor works
+operationally. Use `proven` only with an explicit model-relative property and
+accepted premises; keep a missing premise conditional or unresolved as
+appropriate. Contradictions and invalid compositions are explicit finding kinds;
 they are not a fourth epistemic success class. Expected bad input yields
 diagnostics or findings; unexpected bugs use a distinct internal-failure
 container. A projection error cannot mutate the completed evaluation result.
@@ -142,6 +159,14 @@ snapshot without becoming a second source of truth.
    versioned converter and fixture showing old input, new output and any loss.
    Preserve old manifest/result artifacts. Introduce durable storage only when
    restoration, editing or cross-run queries require it.
+
+The acceptance fixtures should include a syntactically valid but semantically
+invalid definition, a multi-input branch with one missing prerequisite and an
+alternative provider, and a source-to-canonical-to-graph projection that drops
+an unsupported field. Assert the exact relation-specific derivation, method
+and limit attached to each finding, and the projection's source correspondence,
+preserved meaning and recorded loss. A successful encode/decode round trip is
+not sufficient by itself: independent domain assertions must check meaning.
 
 Before moving DEC-002/003 details to resolved, review the logical source-key
 rule, digest algorithm/version, exact-match compatibility and graph query
