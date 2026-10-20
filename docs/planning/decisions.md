@@ -93,3 +93,14 @@ The WB-DES-03 [module concern proposal](../design/module-boundaries.md) assigns
 data and error ownership across intake, canonicalization, validation, graphs,
 evaluation and result assembly. It does not resolve public API shapes, remaining
 DEC-002/003 details, or DEC-004/008 choices.
+
+## 2026-10-20: remaining choices recommended for review
+
+The user requested best-fit proposals that account for reengineering. The
+[decision recommendations](../design/reengineering-decision-proposals.md)
+compare alternatives and propose source/content fingerprints, canonical
+snapshot manifests, conservative exact-match compatibility, derived graph
+queries, a run/evidence envelope, open-world inventory and a staged WB scope.
+These recommendations do **not** extend the accepted core DEC-002/003 direction
+or resolve DEC-004/008. Review the listed decision gates and fixtures before
+moving those entries to resolved or unblocking implementation.

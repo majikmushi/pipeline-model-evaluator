@@ -116,3 +116,13 @@ stable identity/revision/context/extension and typed graph/AND-OR/bootstrap
 boundaries in the decision register. Exact revision identifiers, wire shape,
 compatibility and graph query details remain open; DEC-004/008 were not
 accepted. This is a documentation decision record, with no runtime change.
+
+## 2026-10-20: reengineering-aware decision recommendations
+
+Verified PR #8 merged into main, then prepared a fresh branch with specific
+recommendations for the unresolved DEC-002/003 details and DEC-004/008. The
+proposal chooses stable source-based fingerprints, separate canonical manifests,
+conservative compatibility, derived graph views, open-world inventory and
+run-scoped evidence, with a migration sequence from the current intake API.
+The recommendations are not recorded as adopted decisions. No runtime code,
+dependency, database or public serialization implementation changed.
